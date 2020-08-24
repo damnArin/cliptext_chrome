@@ -3,14 +3,15 @@
 	"name": "Cliptext",
 	"description": "This extension provides a context menu item that converts selected text in your browser into an image to be shared on Twitter.",
 	"version": "1.0",
-	"permissions": [
-		"contextMenus",
-		"tabs",
-		"http://*/*",
-		"https://*/*"
-	],
-	"browser_action": {
-		"default_icon": "icon16.png",
+	"permissions": [ "activeTab", "declarativeContent","storage"],
+	"options_page": "options.html",
+	"page_action": {
+		"default_icon": 
+		{
+        	"16": "icon16.png",
+			"48": "icon48.png",
+			"128": "icon128.png"
+		},
 		"default_popup": "popup.html"
 	},
 	"icons": {
@@ -19,6 +20,7 @@
 		"128": "icon128.png"
 	},
 	"background": {
-		"scripts": ["event.js"]
+		"scripts": ["background.js"],
+		"persistent": false
 	}
 }
